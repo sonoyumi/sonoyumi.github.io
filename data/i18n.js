@@ -1,6 +1,6 @@
 // Переводы сайта. I18N — надписи интерфейса, I18N_CONTENT — тексты содержимого (проекты, навыки, шаги, фильтры).
 // Новый язык — ещё один блок с теми же ключами + кнопка в LANGS. {withTests}, {tests}, {n} подставляются кодом.
-window.LANGS = [{ code: "en", label: "EN" }, { code: "uk", label: "UA" }];
+window.LANGS = [{ code: "en", label: "EN" }, { code: "it", label: "IT" }, { code: "uk", label: "UA" }];
 
 window.I18N = {
   en: {
@@ -29,6 +29,33 @@ window.I18N = {
     "contact.title": "Have a routine task that eats your time?",
     "contact.text": "Write in Italian, English, Ukrainian or Russian. I usually reply within a few hours.",
     "cta.write": "Write on Telegram", "footer.local": "in Bolzano",
+  },
+  it: {
+    "role": "Sviluppatore Python",
+    "nav.about": "Chi sono", "nav.work": "Progetti", "nav.skills": "Competenze", "nav.setup": "Setup", "nav.contact": "Contatti",
+    "aside.text": "Bot Telegram, backend e automazioni che tolgono il lavoro ripetitivo dalle mani delle persone.",
+    "status.short": "Disponibile per freelance e ruoli junior",
+    "theme": "Cambia tema", "lang": "Lingua",
+    "cv.request": "CV su richiesta",
+    "cv.requestText": "Invio volentieri il mio CV a qualsiasi datore di lavoro che lo chieda: basta scrivermi.",
+    "about.factsIntro": "Sviluppatore Python autodidatta a Bolzano. Creo strumenti che tolgono il lavoro ripetitivo dalle mani delle persone.",
+    "about.now": "Oggi",
+    "about.nowText": "Bot Telegram, backend e automazioni. {withTests} progetti su GitHub con {tests} test automatici e CI; sto completando una certificazione Python su Stepik.",
+    "about.before": "Prima",
+    "about.beforeText": "Tre anni di lavoro pratico in Italia: impianti elettrici, edilizia, produzione. Precisione e attenzione alla sicurezza sono venute con me nel codice.",
+    "about.langs": "Lingue", "about.langsText": "Italiano B2+, inglese B1, ucraino e russo madrelingua.",
+    "about.style": "Come lavoro", "about.styleText": "Risposte rapide, condizioni chiare, una guida all'avvio per ogni progetto e supporto dopo la consegna.",
+    "stats.projects": "progetti su GitHub", "stats.tests": "test automatici", "stats.soon": "in arrivo", "langs.title": "lingue",
+    "last.push": "Ultimo push:", "time.today": "oggi", "time.yesterday": "ieri", "time.days": "{n} giorni fa",
+    "work.pinned": "Progetti in evidenza", "cta.more": "Mostra tutti i progetti", "cta.less": "Mostra meno",
+    "work.search": "Cerca progetti", "work.empty": "Nessun progetto trovato.", "work.live": "live", "work.soon": "in arrivo",
+    "work.tests": "test", "work.open": "Apri su GitHub", "work.new": "nuovo",
+    "skills.title": "Con cosa lavoro",
+    "setup.title": "La mia postazione", "setup.text": "Un MacBook M1 con Arch Linux, configurato a mano per restare veloce con 8 GB.",
+    "process.title": "Come lavoreremo",
+    "contact.title": "Hai un compito ripetitivo che ti ruba tempo?",
+    "contact.text": "Scrivimi in italiano, inglese, ucraino o russo. Di solito rispondo entro poche ore.",
+    "cta.write": "Scrivimi su Telegram", "footer.local": "a Bolzano",
   },
   uk: {
     "role": "Python-розробник",
@@ -61,6 +88,45 @@ window.I18N = {
 
 // Тексты содержимого на других языках (английские — в data/projects.js). Чего нет — показывается по-английски.
 window.I18N_CONTENT = {
+  it: {
+    cats: { all: "Tutti", bots: "Bot Telegram", backend: "Backend e API", data: "Dati e scraping", automation: "Automazione", ai: "IA", linux: "Linux" },
+    projects: {
+      "hr-saas": "Tante aziende su un unico servizio: ognuna collega il proprio bot Telegram e scrive i questionari in testo; i candidati ricevono un punteggio 0–100 e una classifica.",
+      "support-desk": "Assistenza clienti su Telegram: i clienti scrivono al bot, gli operatori rispondono da un pannello web. Ticket, SLA, risposte pronte, valutazioni.",
+      "webhook-relay": "Verifica le firme Stripe, GitHub e HMAC, salva ogni evento e lo consegna con nuovi tentativi, dead letter e replay.",
+      "uptime-monitor": "Controlla siti, porte e certificati TLS; avvisi su Telegram senza falsi allarmi, storico della disponibilità e pagina di stato.",
+      "lead-hub": "Le richieste dal sito non vanno più perse: API REST, eliminazione dei duplicati, assegnazione a turno, promemoria SLA e un riepilogo Excel giornaliero.",
+      "booking-bot": "I clienti prenotano su Telegram e ricevono un promemoria; la doppia prenotazione è impossibile per costruzione.",
+      "shop-bot": "Un negozio su Telegram: catalogo da un foglio di calcolo, carrello, ordine guidato, scorte che non vanno mai sotto zero, stati dell'ordine.",
+      "guard-bot": "Un moderatore di gruppi: captcha per i nuovi arrivati, filtri per link e parole vietate, anti-flood, avvisi e silenziamenti.",
+      "invoice-extract": "Fatture elettroniche FatturaPA (XML e .p7m firmati) in un report Excel controllato: IVA per aliquota, fornitori, scadenze.",
+      "table-report": "Unisce file CSV ed Excel disordinati in un unico report pulito con i totali e può inviarlo su Telegram.",
+      "price-tracker": "Tiene d'occhio i prezzi su qualsiasi sito e avvisa su Telegram di ribassi, prezzi obiettivo e cambi di disponibilità.",
+      "async-content-scraper": "Monitora 24/7 siti e canali Telegram pubblici, elimina i duplicati e invia riepiloghi.",
+      "yumi-rice": "Il mio desktop Hyprland / HyDE su un MacBook M1 (Asahi Linux): Waybar a pillole, menu rofi, centro di controllo, colori in tinta con lo sfondo.",
+      "scrape-api": "Web scraping come servizio API a pagamento: chiavi, piani e limiti, una coda Redis con worker, protezione SSRF.",
+      "rag-assistant": "Risponde solo in base ai documenti dell'azienda, sempre citando la fonte, e dice onestamente \"non lo so\".",
+      "booking-miniapp": "Una vera app di prenotazione dentro Telegram: accesso con la firma di Telegram, un unico database con il bot di prenotazione.",
+      "hr-screening-bot": "Un primo colloquio 24/7: le risposte aperte vengono pre-valutate dall'IA e l'HR riceve un unico Excel ordinato per punteggio.",
+    },
+    skills: [
+      ["Bot Telegram", "Prenotazioni, negozi, moderazione, assistenza, questionari con valutazione IA."],
+      ["Backend e API", "API REST, webhook, attività in background, servizi multi-cliente."],
+      ["Database", "Progettazione dello schema, migrazioni, vincoli che rendono impossibili i dati sbagliati."],
+      ["Raccolta dati", "Scraping e monitoraggio 24/7 con avvisi, deduplicazione e nuovi tentativi."],
+      ["Automazione Excel", "Unione di file disordinati, pulizia dei dati, report con totali, fatture elettroniche."],
+      ["Integrazione IA", "Modelli via API, ricerca con fonti, un onesto \"non lo so\"."],
+      ["Qualità e deploy", "Test automatici e CI in ogni progetto, servizi attivi 24/7."],
+      ["Linux", "Arch Linux ogni giorno su un MacBook M1; desktop Hyprland configurato a mano."],
+    ],
+    process: [
+      ["Parliamone", "Descrivi il compito nella tua lingua: italiano, inglese, ucraino o russo."],
+      ["Piano e prezzo", "Propongo un piano chiaro, una scadenza e un prezzo prima di iniziare."],
+      ["Sviluppo", "Mostro i progressi lungo il percorso; ogni funzione è coperta da test."],
+      ["Consegna", "Ricevi il codice, una guida all'avvio e una breve spiegazione."],
+      ["Supporto", "Resto in contatto dopo la consegna per correzioni e miglioramenti."],
+    ],
+  },
   uk: {
     cats: { all: "Усі", bots: "Telegram-боти", backend: "Бекенд і API", data: "Дані та парсинг", automation: "Автоматизація", ai: "ШІ", linux: "Linux" },
     projects: {
