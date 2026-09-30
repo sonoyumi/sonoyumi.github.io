@@ -1,6 +1,7 @@
 // Данные сайта: профиль, навыки, проекты.
-// Чтобы добавить проект — допишите объект в PROJECTS (картинка: assets/covers/<slug>.jpg).
-// status: "live" — опубликован на GitHub, "soon" — скоро.
+// Чтобы добавить проект — допишите объект в PROJECTS (картинка: assets/img/<slug>.webp, 640 px).
+// status: "live" — опубликован на GitHub, "soon" — скоро. featured: true — закреплён на главной.
+// Новые публичные репозитории и смена «soon» → «live» подтягиваются сами из data/github.js.
 
 window.SITE = {
   name: "Vladyslav Shokun",
@@ -28,10 +29,6 @@ window.SITE = {
     github: "https://github.com/sonoyumi",
     githubText: "sonoyumi",
   },
-  cv: [
-    { lang: "English", code: "EN", href: "assets/cv/CV_Vladyslav_Shokun_EN.pdf" },
-    { lang: "Italiano", code: "IT", href: "assets/cv/CV_Vladyslav_Shokun_IT.pdf" },
-  ],
 };
 
 window.SKILLS = [
@@ -98,10 +95,10 @@ window.PROJECTS = [
   { slug: "scrape-api", name: "Scrape API", cats: ["data", "backend"], status: "soon", tests: 72,
     text: "Web scraping as a paid API service: keys, plans and limits, a Redis queue with workers, SSRF protection.",
     stack: ["FastAPI", "Redis", "Workers", "Docker Compose"] },
-  { slug: "rag-assistant", name: "RAG Assistant", cats: ["ai"], status: "soon", tests: 42,
+  { slug: "rag-assistant", name: "RAG Assistant", cats: ["ai"], status: "live", tests: 42,
     text: "Answers questions only from company documents, always with the source — and honestly says \"I don't know\".",
     stack: ["SQLite FTS5", "Claude API", "aiogram 3"] },
-  { slug: "booking-miniapp", name: "Booking Mini App", cats: ["bots"], status: "soon", tests: 29,
+  { slug: "booking-miniapp", name: "Booking Mini App", cats: ["bots"], status: "live", tests: 29,
     text: "A real booking app inside Telegram: login by Telegram signature, one database with the booking bot.",
     stack: ["Telegram Mini App", "FastAPI", "JavaScript"] },
   { slug: "hr-screening-bot", name: "HR Screening Bot", cats: ["bots", "ai"], status: "soon", tests: 21,

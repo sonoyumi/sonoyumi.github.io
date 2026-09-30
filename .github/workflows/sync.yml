@@ -1,0 +1,45 @@
+# Автообновление сайта: каждые 6 часов берёт с GitHub публичные репозитории, число тестов из README
+# и последний пуш, обновляет data/github.js и публикует, если что-то изменилось.
+# Запустить вручную: вкладка Actions → Sync with GitHub → Run workflow.
+name: Sync with GitHub
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Update data/github.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python tools/sync_github.py
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/github.js; then
+            echo "Nothing changed"
+            exit 0
+          fi
+          git config user.name "Vladyslav Shokun"
+          git config user.email "sonoyumiii@gmail.com"
+          git add data/github.js
+          git commit -m "data: sync with GitHub"
+          git push
+          # Коммит от токена Actions может не запустить сборку Pages — просим её явно
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
