@@ -43,7 +43,7 @@ a { color: inherit; text-decoration: none; } button { font: inherit; color: inhe
 .layout { width: min(1160px, 100% - 32px); margin: 0 auto; display: grid; grid-template-columns: 370px 1fr; gap: 64px; }
 aside { position: sticky; top: 0; height: 100vh; padding: 60px 0 36px; display: flex; flex-direction: column; gap: 20px; }
 aside h1 { font-size: 38px; font-weight: 600; letter-spacing: -.04em; line-height: 1.05; }
-.role { font-size: 17px; margin-top: 6px; } .role span { color: var(--acc); }
+.role { font-size: 17px; margin-top: 6px; } .role .city { color: var(--acc); }
 aside > p { color: var(--sub); max-width: 34ch; }
 .toc { display: flex; flex-direction: column; margin-top: 6px; }
 .toc a { display: flex; align-items: center; gap: 12px; padding: 7px 0; font: 12.5px var(--mono); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
@@ -100,6 +100,12 @@ section { padding-bottom: 56px; scroll-margin-top: 24px; }
 .end h3 { font-size: 22px; letter-spacing: -.03em; font-weight: 600; margin-bottom: 8px; } .end p { color: var(--sub); margin-bottom: 18px; }
 .end .note { display: flex; gap: 8px; align-items: center; margin: 18px 0 0; font-size: 13.5px; color: var(--muted); }
 footer { font: 12px var(--mono); color: var(--muted); padding-top: 24px; }
+/* Переключатель языка: сегменты EN | UA */
+.lng { display: inline-flex; padding: 3px; gap: 2px; border: 1px solid var(--line2); border-radius: 10px; height: 38px; }
+.lng button { min-width: 38px; padding: 0 8px; border: 0; border-radius: 7px; background: none; color: var(--muted); font: 500 12.5px var(--mono); cursor: pointer; }
+.lng button:hover { color: var(--text); }
+.lng button[aria-pressed="true"] { background: var(--surf2); color: var(--text); box-shadow: inset 0 0 0 1px var(--line2); }
+.lng.sm { height: 30px; margin-left: auto; flex: none; } .lng.sm button { min-width: 32px; font-size: 11.5px; }
 .last { display: flex; align-items: center; gap: 8px; margin-top: 12px; font: 12.5px var(--mono); color: var(--muted); }
 .last b { color: var(--text); font-weight: 500; }
 .acc .in.nocover { grid-template-columns: 1fr; }
@@ -116,10 +122,10 @@ footer { font: 12px var(--mono); color: var(--muted); padding-top: 24px; }
   .acc .in { grid-template-columns: 1fr; } .setup { grid-template-columns: 1fr; } .setup a.shot { display: none; }
   .acc summary { padding: 13px 2px; min-height: 52px; }
   .skills { grid-template-columns: 1fr 1fr; gap: 0 14px; } .skills h4 { font-size: 13.5px; } .skills p { font-size: 11px; }
-  .mbar { display: flex; position: fixed; top: 0; left: 0; right: 0; z-index: 50; gap: 4px; padding: 8px 12px; overflow-x: auto; scrollbar-width: none;
+  .mbar { display: flex; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 50; gap: 8px; padding: 8px 12px;
     background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
     transform: translateY(-100%); transition: transform .25s; }
-  .mbar::-webkit-scrollbar { display: none; }
+  .mlinks { display: flex; gap: 4px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; } .mlinks::-webkit-scrollbar { display: none; }
   .mbar.show { transform: none; }
   .mbar b { font-weight: 600; font-size: 14px; padding: 6px 8px 6px 2px; white-space: nowrap; }
   .mbar a { flex: none; font: 12.5px var(--mono); color: var(--sub); padding: 6px 10px; border-radius: 8px; }
@@ -152,10 +158,10 @@ footer { font: 12px var(--mono); color: var(--muted); padding-top: 24px; }
 <symbol id="i-arrow-up-right" viewBox="0 0 24 24"> <path d="M7 7h10v10" /> <path d="M7 17 17 7" /> </symbol>
 <symbol id="i-file-text" viewBox="0 0 24 24"> <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /> </symbol>
 </svg>
-<nav class="mbar" id="mbar" aria-label="Sections"><b>V. Shokun</b><a href="#about" data-i18n="nav.about"></a><a href="#work" data-i18n="nav.work"></a><a href="#skills" data-i18n="nav.skills"></a><a href="#setup" data-i18n="nav.setup"></a><a href="#contact" data-i18n="nav.contact"></a></nav>
+<nav class="mbar" id="mbar" aria-label="Sections"><div class="mlinks"><b>V. Shokun</b><a href="#about" data-i18n="nav.about"></a><a href="#work" data-i18n="nav.work"></a><a href="#skills" data-i18n="nav.skills"></a><a href="#setup" data-i18n="nav.setup"></a><a href="#contact" data-i18n="nav.contact"></a></div><div class="lng sm" data-lng role="group" data-i18n-aria="lang"></div></nav>
 <div class="layout">
   <aside id="aside">
-    <div><h1>Vladyslav Shokun</h1><div class="role">Python developer · <span>Bolzano</span></div></div>
+    <div><h1>Vladyslav Shokun</h1><div class="role"><span data-i18n="role"></span> · <span class="city">Bolzano</span></div></div>
     <p data-i18n="aside.text"></p>
     <span class="pill"><span class="dot"></span><span data-i18n="status.short"></span></span>
     <nav class="toc" id="toc"><a href="#about" data-i18n="nav.about"></a><a href="#work" data-i18n="nav.work"></a><a href="#skills" data-i18n="nav.skills"></a><a href="#setup" data-i18n="nav.setup"></a><a href="#contact" data-i18n="nav.contact"></a></nav>
@@ -165,6 +171,7 @@ footer { font: 12px var(--mono); color: var(--muted); padding-top: 24px; }
       <a class="sq" data-link="linkedin" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a>
       <a class="sq" data-link="github" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
       <button class="sq" type="button" id="theme" data-i18n-aria="theme"><svg class="ic"><use href="#i-sun-moon"/></svg></button>
+      <div class="lng" data-lng role="group" data-i18n-aria="lang"></div>
     </div>
     <a class="cvreq" data-link="email"><svg class="ic"><use href="#i-file-text"/></svg><span><b data-i18n="cv.request"></b> · <span data-i18n="cv.requestText"></span></span></a>
   </aside>
@@ -205,9 +212,15 @@ footer { font: 12px var(--mono); color: var(--muted); padding-top: 24px; }
 document.addEventListener("DOMContentLoaded", () => {
   const $ = (s) => document.querySelector(s), $$ = (s) => [...document.querySelectorAll(s)];
   const L = SITE.links, ic = (n) => `<svg class="ic"><use href="#i-${n}"/></svg>`;
-  // Переводы: язык браузера, если он есть в I18N; иначе английский
-  let lang = "en"; try { const w = localStorage.getItem("lang") || navigator.language.slice(0, 2); if (I18N[w]) lang = w; } catch (e) {}
-  document.documentElement.lang = lang;
+
+  // ===== Язык: ?lang= в адресе → сохранённый выбор → язык браузера (uk) → английский =====
+  const codes = LANGS.map((l) => l.code);
+  let lang = "en";
+  try {
+    const q = new URLSearchParams(location.search).get("lang"), saved = localStorage.getItem("lang"), nav = navigator.language.slice(0, 2);
+    lang = [q, saved, nav].find((x) => codes.includes(x)) || "en";
+  } catch (e) {}
+
   // ===== Данные с GitHub (data/github.js обновляет GitHub Action) =====
   // Публичный репозиторий → «live»; число тестов из README; новые репозитории добавляются сами.
   const GHR = (window.GH && GH.repos) || {};
@@ -223,55 +236,88 @@ document.addEventListener("DOMContentLoaded", () => {
   // Цифры считаются из данных, чтобы не расходились с GitHub
   const live = PROJECTS.filter((p) => p.status === "live");
   Object.assign(STATS, { live: live.length, soon: PROJECTS.length - live.length, tests: live.reduce((s, p) => s + (p.tests || 0), 0), withTests: live.filter((p) => p.tests).length });
+
+  // ===== Перевод: надписи (I18N) и содержимое (I18N_CONTENT); чего нет — по-английски =====
   const fill = (s) => s.replace(/\{(\w+)\}/g, (m, k) => STATS[k] ?? m);
   const t = (k) => fill((I18N[lang] && I18N[lang][k]) ?? I18N.en[k] ?? k);
+  const C = () => (window.I18N_CONTENT && I18N_CONTENT[lang]) || {};
+  const ptext = (p) => (C().projects && C().projects[p.slug]) || p.text;
+  const catLabel = (c) => (C().cats && C().cats[c.id]) || c.label;
+  const skill = (s, i) => { const x = C().skills && C().skills[i]; return x ? { ...s, title: x[0], text: x[1] } : s; };
+  const step = (s, i) => { const x = C().process && C().process[i]; return x ? { title: x[0], text: x[1] } : s; };
   // Календарные дни по времени Больцано: вчерашний вечер — «yesterday», а не «today»
   const day = (x) => Date.parse(new Date(x).toLocaleDateString("en-CA", { timeZone: "Europe/Rome" }));
-  const ago = (iso) => { const d = Math.max(0, Math.round((day(Date.now()) - day(iso)) / 864e5)); return d === 0 ? t("time.today") : d === 1 ? t("time.yesterday") : fill(t("time.days")).replace("{n}", d); };
+  const ago = (iso) => { const d = Math.max(0, Math.round((day(Date.now()) - day(iso)) / 864e5)); return d === 0 ? t("time.today") : d === 1 ? t("time.yesterday") : t("time.days").replace("{n}", d); };
 
   const status = (p) => p.status === "live" ? `<span class="live">● ${t("work.live")}</span>` : `<span class="soonc">○ ${t("work.soon")}</span>`;
   const meta = (p) => p.stack.slice(0, 3).join(" · ") + (p.tests ? ` · ${p.tests} ${t("work.tests")}` : "") + (p.noCover ? ` · ${t("work.new")}` : "");
   // Строка проекта; картинка внутри закрытой строки не грузится, пока строку не раскроют
-  const item = (p, open) => `<details class="p-${p.status}"${open ? " open" : ""}><summary><div><h4>${p.name}</h4><small>${meta(p)}</small></div><span class="s">${status(p)}</span>${ic("plus").replace('class="ic"', 'class="ic ch"')}</summary>
+  const item = (p, open) => `<details class="p-${p.status}" data-slug="${p.slug}"${open ? " open" : ""}><summary><div><h4>${p.name}</h4><small>${meta(p)}</small></div><span class="s">${status(p)}</span>${ic("plus").replace('class="ic"', 'class="ic ch"')}</summary>
     <div class="in${p.noCover ? " nocover" : ""}">${p.noCover ? "" : `<div class="cover"><img src="assets/img/${p.slug}.webp" width="640" height="385" alt="${p.name}" loading="lazy" decoding="async"></div>`}
-    <div><p>${p.text}</p><div class="tags">${p.stack.map((x) => `<span class="tag">${x}</span>`).join("")}</div>
+    <div><p>${ptext(p)}</p><div class="tags">${p.stack.map((x) => `<span class="tag">${x}</span>`).join("")}</div>
     ${p.status === "live" ? `<a class="btn" href="https://github.com/sonoyumi/${p.slug}" target="_blank" rel="noopener">${ic("github")} ${t("work.open")}</a>` : ""}</div></div></details>`;
+  const openSlugs = (root) => new Set([...root.querySelectorAll("details[open]")].map((d) => d.dataset.slug));
 
   const pins = PROJECTS.filter((p) => p.featured);
-  $("#pins").innerHTML = pins.map((p, i) => item(p, i === 0 && innerWidth > 960)).join("");
-  $("#cnt").textContent = `${pins.length} / ${PROJECTS.length}`; $("#n").textContent = PROJECTS.length;
-  $("#nums").innerHTML = [[STATS.live, "stats.projects"], [STATS.tests, "stats.tests"], [STATS.soon, "stats.soon"], [STATS.languages, "langs.title"]].map(([n, k]) => `<div><b>${n}</b><span data-i18n="${k}"></span></div>`).join("");
-  $("#sk").innerHTML = SKILLS.map((s) => `<div><h4>${ic(s.icon)}${s.title}</h4><p>${s.tags.join(" · ")}</p></div>`).join("");
-  $("#steps").innerHTML = PROCESS.map((s, i) => `<div><i>0${i + 1}</i><b>${s.title}</b><span>${s.text}</span></div>`).join("");
-
-  // Все проекты: строятся только при первом раскрытии
-  let cat = "all", built = false;
+  let cat = "all", built = false, expanded = false, firstPins = true;
   function draw() {
-    const q = $("#q").value.toLowerCase();
-    const list = PROJECTS.filter((p) => (cat === "all" || p.cats.includes(cat)) && (p.name + p.text + p.stack.join(" ")).toLowerCase().includes(q));
-    $("#list").innerHTML = list.map((p) => item(p)).join("") || `<p class="empty">${t("work.empty")}</p>`;
+    const q = $("#q").value.toLowerCase(), keep = openSlugs($("#list"));
+    const list = PROJECTS.filter((p) => (cat === "all" || p.cats.includes(cat)) && (p.name + ptext(p) + p.text + p.stack.join(" ")).toLowerCase().includes(q));
+    $("#list").innerHTML = list.map((p) => item(p, keep.has(p.slug))).join("") || `<p class="empty">${t("work.empty")}</p>`;
   }
   function build() {
-    $("#f").innerHTML = CATEGORIES.map((c) => `<button type="button" data-c="${c.id}" class="${c.id === "all" ? "on" : ""}">${c.label}</button>`).join("");
     $("#f").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; cat = b.dataset.c; $$("#f button").forEach((x) => x.classList.toggle("on", x === b)); draw(); });
-    $("#q").addEventListener("input", draw); draw(); built = true;
+    $("#q").addEventListener("input", draw); built = true;
   }
-  $("#more").addEventListener("click", () => {
-    if (!built) build();
-    const show = $("#rest").hidden; $("#rest").hidden = !show; $("#pins").hidden = show;
-    $("#moreLbl").textContent = t(show ? "cta.less" : "cta.more");
-    $("#cnt").textContent = `${show ? PROJECTS.length : pins.length} / ${PROJECTS.length}`;
-  });
-  addEventListener("keydown", (e) => { if (e.key === "p" && !/INPUT/.test(document.activeElement.tagName) && !e.metaKey && !e.ctrlKey) { $("#more").click(); $("#work").scrollIntoView(); } });
 
-  // Надписи, ссылки, тема, часы
-  $$("[data-i18n]").forEach((el) => { el.innerHTML = t(el.dataset.i18n); });
-  $$("[data-i18n-ph]").forEach((el) => { el.placeholder = t(el.dataset.i18nPh); });
-  $$("[data-i18n-aria]").forEach((el) => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+  // ===== Всё, что зависит от языка; вызывается при загрузке и при переключении =====
+  function apply() {
+    document.documentElement.lang = lang;
+    $$("[data-i18n]").forEach((el) => { el.innerHTML = t(el.dataset.i18n); });
+    $$("[data-i18n-ph]").forEach((el) => { el.placeholder = t(el.dataset.i18nPh); });
+    $$("[data-i18n-aria]").forEach((el) => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+    const keep = openSlugs($("#pins"));
+    $("#pins").innerHTML = pins.map((p, i) => item(p, firstPins ? i === 0 && innerWidth > 960 : keep.has(p.slug))).join("");
+    firstPins = false;
+    $("#nums").innerHTML = [[STATS.live, "stats.projects"], [STATS.tests, "stats.tests"], [STATS.soon, "stats.soon"], [STATS.languages, "langs.title"]].map(([n, k]) => `<div><b>${n}</b><span>${t(k)}</span></div>`).join("");
+    $("#sk").innerHTML = SKILLS.map((s, i) => { const x = skill(s, i); return `<div><h4>${ic(x.icon)}${x.title}</h4><p>${x.tags.join(" · ")}</p></div>`; }).join("");
+    $("#steps").innerHTML = PROCESS.map((s, i) => { const x = step(s, i); return `<div><i>0${i + 1}</i><b>${x.title}</b><span>${x.text}</span></div>`; }).join("");
+    if (built) { $("#f").innerHTML = CATEGORIES.map((c) => `<button type="button" data-c="${c.id}" class="${c.id === cat ? "on" : ""}">${catLabel(c)}</button>`).join(""); draw(); }
+    $("#moreLbl").textContent = t(expanded ? "cta.less" : "cta.more");
+    $("#cnt").textContent = `${expanded ? PROJECTS.length : pins.length} / ${PROJECTS.length}`; $("#n").textContent = PROJECTS.length;
+    if (window.GH && GH.lastPush) { const l = $("#last"); l.innerHTML = `<span class="dot"></span>${t("last.push")} <b>${GH.lastPush.repo}</b> · ${ago(GH.lastPush.at)}`; l.hidden = false; }
+    $$("[data-lng] button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.l === lang));
+  }
+
+  // Переключатель языка: кнопки в профиле и в мобильной панели, клавиша L; выбор запоминается и попадает в адрес
+  $$("[data-lng]").forEach((box) => {
+    box.innerHTML = LANGS.map((l) => `<button type="button" data-l="${l.code}">${l.label}</button>`).join("");
+    box.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) setLang(b.dataset.l); });
+  });
+  function setLang(l) {
+    if (l === lang || !codes.includes(l)) return;
+    lang = l; apply();
+    try { localStorage.setItem("lang", l); } catch (e) {}
+    const u = new URL(location.href); u.searchParams.set("lang", l); history.replaceState(null, "", u);
+  }
+
+  $("#more").addEventListener("click", () => {
+    if (!built) { build(); }
+    expanded = !expanded; $("#rest").hidden = !expanded; $("#pins").hidden = expanded;
+    apply();
+  });
+  addEventListener("keydown", (e) => {
+    if (/INPUT/.test(document.activeElement.tagName) || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === "p") { $("#more").click(); $("#work").scrollIntoView(); }
+    if (e.key === "l") setLang(codes[(codes.indexOf(lang) + 1) % codes.length]);
+  });
+
+  // Ссылки, тема, часы
   $$("[data-link]").forEach((a) => { a.href = L[a.dataset.link]; if (!a.href.startsWith("mailto:")) { a.target = "_blank"; a.rel = "noopener"; } });
   $("#theme").addEventListener("click", () => { const r = document.documentElement; r.dataset.theme = r.dataset.theme === "light" ? "dark" : "light"; try { localStorage.setItem("theme", r.dataset.theme); } catch (e) {} });
   const tick = () => $("#clock").textContent = new Date().toLocaleTimeString("it-IT", { timeZone: "Europe/Rome", hour: "2-digit", minute: "2-digit" });
   tick(); setInterval(tick, 30000);
+  apply();
 
   // Отметка раздела в меню — через IntersectionObserver, без обработчика прокрутки
   const links = $$("#toc a, #mbar a");
@@ -279,9 +325,6 @@ document.addEventListener("DOMContentLoaded", () => {
   $$("main section[id]").forEach((s) => io.observe(s));
   // Мобильная панель: видна, пока профиль (aside) за верхом экрана
   new IntersectionObserver(([e]) => $("#mbar").classList.toggle("show", !e.isIntersecting)).observe($("#aside"));
-
-  // Последний пуш на GitHub
-  if (window.GH && GH.lastPush) { const l = $("#last"); l.innerHTML = `<span class="dot"></span>${t("last.push")} <b>${GH.lastPush.repo}</b> · ${ago(GH.lastPush.at)}`; l.hidden = false; }
 });
 </script>
 </body>
