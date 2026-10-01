@@ -42,6 +42,13 @@ window.SKILLS = [
   { icon: "terminal", title: "Linux", text: "Daily Arch Linux on a MacBook M1; hand-tuned Hyprland desktop.", tags: ["Arch / Asahi", "Hyprland", "Bash", "Lua"] },
 ];
 
+// Сертификаты: url — страница проверки (пустая строка — без ссылки), date — год-месяц
+window.CERTS = [
+  { name: "Software Engineer", issuer: "HackerRank", date: "2026-10", url: "https://www.hackerrank.com/certificates/8f0cea1e7ecd", tags: ["Problem Solving", "SQL", "REST API"] },
+  { name: "Introduction to Model Context Protocol", issuer: "Anthropic", date: "2026-10", url: "https://academy.claude.com/badges/915986b5-8b0f-49b5-9e1e-3415f0d98b52", tags: ["MCP", "Python SDK"] },
+  { name: "Claude Code 101", issuer: "Anthropic", date: "2026-10", url: "https://academy.claude.com/badges/6cf7be17-7abc-468d-8762-4a9c355044f0", tags: ["AI agents", "Workflow"] },
+];
+
 window.CATEGORIES = [
   { id: "all", label: "All" },
   { id: "bots", label: "Telegram bots" },

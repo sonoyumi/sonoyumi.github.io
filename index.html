@@ -92,6 +92,9 @@ section { padding-bottom: 56px; scroll-margin-top: 24px; }
 .skills h4 { font-size: 14.5px; display: flex; gap: 8px; align-items: center; font-weight: 600; } .skills h4 .ic { color: var(--acc); }
 .skills p { font: 12px var(--mono); color: var(--muted); margin-top: 2px; }
 .setup { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; align-items: start; }
+.certs > div { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+.certs b { font-weight: 600; } .certs small { display: block; font: 12px var(--mono); color: var(--muted); margin-top: 2px; }
+.certs a { flex: none; display: inline-flex; align-items: center; gap: 4px; font: 12.5px var(--mono); color: var(--sub); } .certs a:hover { color: var(--acc); }
 .setup img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); display: block; }
 .setup p { color: var(--sub); font-size: 14.5px; margin-bottom: 12px; }
 .steps div { display: grid; grid-template-columns: 36px 140px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
@@ -194,7 +197,8 @@ footer { font: 12px var(--mono); color: var(--muted); padding-top: 24px; }
         <div class="tools"><div class="f" id="f"></div><label><svg class="ic"><use href="#i-search"/></svg><input type="search" id="q" data-i18n-ph="work.search" autocomplete="off"></label></div>
         <div class="acc" id="list"></div></div></section>
 
-    <section id="skills"><div class="sh"><span data-i18n="skills.title"></span></div><div class="skills" id="sk"></div></section>
+    <section id="skills"><div class="sh"><span data-i18n="skills.title"></span></div><div class="skills" id="sk"></div>
+      <div class="sh" style="margin-top:36px"><span data-i18n="certs.title"></span></div><div class="certs" id="certs"></div></section>
 
     <section id="setup"><div class="sh"><span data-i18n="setup.title"></span></div>
       <div class="setup"><a class="shot" href="https://github.com/sonoyumi/yumi-rice" target="_blank" rel="noopener"><img src="assets/img/setup.webp" width="1000" height="625" alt="My Hyprland desktop on Arch Linux" loading="lazy" decoding="async"></a>
@@ -281,6 +285,8 @@ document.addEventListener("DOMContentLoaded", () => {
     firstPins = false;
     $("#nums").innerHTML = [[STATS.live, "stats.projects"], [STATS.tests, "stats.tests"], [STATS.soon, "stats.soon"], [STATS.languages, "langs.title"]].map(([n, k]) => `<div><b>${n}</b><span>${t(k)}</span></div>`).join("");
     $("#sk").innerHTML = SKILLS.map((s, i) => { const x = skill(s, i); return `<div><h4>${ic(x.icon)}${x.title}</h4><p>${x.tags.join(" · ")}</p></div>`; }).join("");
+    $("#certs").innerHTML = CERTS.map((c) => `<div><div><b>${c.name}</b><small>${c.issuer} · ${new Date(c.date).toLocaleDateString(lang, { month: "short", year: "numeric" })} · ${c.tags.join(" · ")}</small></div>
+      ${c.url ? `<a href="${c.url}" target="_blank" rel="noopener">${t("certs.verify")} ${ic("arrow-up-right")}</a>` : ""}</div>`).join("");
     $("#steps").innerHTML = PROCESS.map((s, i) => { const x = step(s, i); return `<div><i>0${i + 1}</i><b>${x.title}</b><span>${x.text}</span></div>`; }).join("");
     if (built) { $("#f").innerHTML = CATEGORIES.map((c) => `<button type="button" data-c="${c.id}" class="${c.id === cat ? "on" : ""}">${catLabel(c)}</button>`).join(""); draw(); }
     $("#moreLbl").textContent = t(expanded ? "cta.less" : "cta.more");
