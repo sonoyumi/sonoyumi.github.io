@@ -1,6 +1,44 @@
 // Сгенерировано tools/sync_github.py — не править руками
 window.GH = {
  "repos": {
+  "post-planner": {
+   "description": "Content planner for Telegram channels: drafts, editor approval, a calendar, scheduled publishing with retries and no double posts, repeats, optional AI rewriting",
+   "topics": [
+    "aiogram",
+    "content-planner",
+    "fastapi",
+    "python",
+    "scheduler",
+    "smm",
+    "social-media",
+    "sqlite",
+    "telegram",
+    "telegram-bot"
+   ],
+   "language": "Python",
+   "stars": 0,
+   "pushed": "2026-10-01T01:06:41Z",
+   "tests": 35
+  },
+  "doc-intake": {
+   "description": "Scans and PDFs of invoices, receipts and delivery notes become checked data: Claude reads them, rules check totals, VAT and VAT numbers, a person approves, Excel for the accountant",
+   "topics": [
+    "automation",
+    "claude-api",
+    "document-processing",
+    "excel",
+    "fastapi",
+    "fatturapa",
+    "invoices",
+    "ocr",
+    "python",
+    "sqlite"
+   ],
+   "language": "Python",
+   "stars": 0,
+   "pushed": "2026-10-01T01:06:33Z",
+   "tests": 52
+  },
   "booking-miniapp": {
    "description": "Telegram Mini App for booking: a web booking screen inside Telegram with initData authentication, sharing booking-bot's schedule and database (FastAPI + vanilla JS)",
    "topics": [
@@ -277,5 +315,5 @@ window.GH = {
   "repo": "hr-saas",
   "at": "2026-09-30T19:35:24Z"
  },
- "synced": "2026-09-30T22:58:53Z"
+ "synced": "2026-10-01T01:19:49Z"
 };
