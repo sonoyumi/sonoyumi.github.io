@@ -53,6 +53,12 @@ window.CATEGORIES = [
 ];
 
 window.PROJECTS = [
+  { slug: "doc-intake", name: "Doc Intake", cats: ["automation", "ai"], status: "live", featured: true, tests: 52,
+    text: "Scans and PDFs of invoices, receipts and delivery notes become checked data: Claude reads them, rules check totals and VAT, a person approves, Excel for the accountant.",
+    stack: ["Claude API", "FastAPI", "SQLite", "openpyxl"] },
+  { slug: "post-planner", name: "Post Planner", cats: ["bots", "backend"], status: "live", featured: true, tests: 35,
+    text: "Content planner for Telegram channels: the team writes, an editor approves, posts go out on time with photos, buttons and repeats — never twice.",
+    stack: ["aiogram 3", "FastAPI", "SQLite", "Time zones"] },
   { slug: "hr-saas", name: "HR Screening SaaS", cats: ["backend", "bots", "ai"], status: "live", featured: true, tests: 49,
     text: "Many companies on one service: each connects its own Telegram bot and writes questionnaires as text; candidates are scored 0–100 and ranked.",
     stack: ["aiogram 3", "FastAPI", "Webhooks", "SQLite", "Fernet"] },

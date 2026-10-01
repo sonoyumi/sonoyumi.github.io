@@ -91,6 +91,8 @@ window.I18N_CONTENT = {
   it: {
     cats: { all: "Tutti", bots: "Bot Telegram", backend: "Backend e API", data: "Dati e scraping", automation: "Automazione", ai: "IA", linux: "Linux" },
     projects: {
+      "doc-intake": "Scansioni e PDF di fatture, scontrini e DDT diventano dati verificati: Claude li legge, le regole controllano totali e IVA, una persona approva, Excel per il commercialista.",
+      "post-planner": "Pianificatore di contenuti per canali Telegram: il team scrive, l'editor approva, i post escono all'ora giusta con foto, pulsanti e ripetizioni — mai due volte.",
       "hr-saas": "Tante aziende su un unico servizio: ognuna collega il proprio bot Telegram e scrive i questionari in testo; i candidati ricevono un punteggio 0–100 e una classifica.",
       "support-desk": "Assistenza clienti su Telegram: i clienti scrivono al bot, gli operatori rispondono da un pannello web. Ticket, SLA, risposte pronte, valutazioni.",
       "webhook-relay": "Verifica le firme Stripe, GitHub e HMAC, salva ogni evento e lo consegna con nuovi tentativi, dead letter e replay.",
@@ -130,6 +132,8 @@ window.I18N_CONTENT = {
   uk: {
     cats: { all: "Усі", bots: "Telegram-боти", backend: "Бекенд і API", data: "Дані та парсинг", automation: "Автоматизація", ai: "ШІ", linux: "Linux" },
     projects: {
+      "doc-intake": "Скани й PDF рахунків, чеків і накладних стають перевіреними даними: Claude читає, правила перевіряють суми й ПДВ, людина затверджує, Excel для бухгалтера.",
+      "post-planner": "Планувальник контенту для Telegram-каналів: команда пише, редактор затверджує, пости виходять вчасно з фото, кнопками й повторами — ніколи двічі.",
       "hr-saas": "Багато компаній на одному сервісі: кожна підключає свого Telegram-бота й пише анкети текстом; кандидати отримують бал 0–100 і рейтинг.",
       "support-desk": "Підтримка клієнтів у Telegram: клієнти пишуть боту, оператори відповідають з веб-панелі. Звернення, SLA, шаблони відповідей, оцінки.",
       "webhook-relay": "Перевіряє підписи Stripe, GitHub і HMAC, зберігає кожну подію й доставляє її з повторами, «мертвими листами» та повторним відтворенням.",
