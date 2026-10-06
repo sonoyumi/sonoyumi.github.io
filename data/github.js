@@ -15,9 +15,9 @@ window.GH = {
     "swaync",
     "waybar"
    ],
-   "language": "Shell",
+   "language": "Python",
    "stars": 1,
-   "pushed": "2026-10-05T22:33:14Z",
+   "pushed": "2026-10-06T05:51:59Z",
    "tests": null
   },
   "post-planner": {
@@ -313,7 +313,7 @@ window.GH = {
  },
  "lastPush": {
   "repo": "yumi-rice",
-  "at": "2026-10-05T19:12:18Z"
+  "at": "2026-10-06T05:52:00Z"
  },
- "synced": "2026-10-06T00:08:06Z"
+ "synced": "2026-10-06T06:30:07Z"
 };
