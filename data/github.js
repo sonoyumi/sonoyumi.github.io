@@ -1,6 +1,25 @@
 // Сгенерировано tools/sync_github.py — не править руками
 window.GH = {
  "repos": {
+  "yumi-rice": {
+   "description": "Hyprland 0.56 (Lua) + HyDE rice for MacBook Pro M1 on Asahi Linux: pill Waybar, one rofi menu engine, swaync control center, wallpaper-synced colors",
+   "topics": [
+    "arm64",
+    "asahi-linux",
+    "dotfiles",
+    "hyde",
+    "hyprland",
+    "linux",
+    "rice",
+    "rofi",
+    "swaync",
+    "waybar"
+   ],
+   "language": "Shell",
+   "stars": 1,
+   "pushed": "2026-10-05T22:33:14Z",
+   "tests": null
+  },
   "post-planner": {
    "description": "Content planner for Telegram channels: drafts, editor approval, a calendar, scheduled publishing with retries and no double posts, repeats, optional AI rewriting",
    "topics": [
@@ -76,25 +95,6 @@ window.GH = {
    "stars": 0,
    "pushed": "2026-09-30T21:15:55Z",
    "tests": 42
-  },
-  "yumi-rice": {
-   "description": "Hyprland 0.56 (Lua) + HyDE rice for MacBook Pro M1 on Asahi Linux: pill Waybar, one rofi menu engine, swaync control center, wallpaper-synced colors",
-   "topics": [
-    "arm64",
-    "asahi-linux",
-    "dotfiles",
-    "hyde",
-    "hyprland",
-    "linux",
-    "rice",
-    "rofi",
-    "swaync",
-    "waybar"
-   ],
-   "language": "Shell",
-   "stars": 1,
-   "pushed": "2026-09-30T20:51:32Z",
-   "tests": null
   },
   "hr-saas": {
    "description": "Multi-tenant HR screening SaaS: every company connects its own Telegram bot, writes questionnaires as text, candidates are scored 0-100 and ranked. Webhooks, encrypted bot tokens, plans, optional Claude scoring (aiogram 3, FastAPI, SQLite)",
@@ -312,8 +312,8 @@ window.GH = {
   }
  },
  "lastPush": {
-  "repo": "async-content-scraper",
-  "at": "2026-09-30T19:35:19Z"
+  "repo": "yumi-rice",
+  "at": "2026-10-05T19:12:18Z"
  },
- "synced": "2026-10-02T12:47:30Z"
+ "synced": "2026-10-06T00:08:06Z"
 };
