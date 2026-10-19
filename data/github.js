@@ -1,6 +1,24 @@
 // Сгенерировано tools/sync_github.py — не править руками
 window.GH = {
  "repos": {
+  "yumi-touchid": {
+   "description": "Touch ID on a stock linux-asahi kernel for MacBook Pro 13\" M1 (Arch Linux ARM) - built with Claude Code",
+   "topics": [
+    "apple-silicon",
+    "arch-linux-arm",
+    "asahi",
+    "claude-code",
+    "fingerprint",
+    "linux-kernel",
+    "m1",
+    "rust",
+    "touch-id"
+   ],
+   "language": "Rust",
+   "stars": 0,
+   "pushed": "2026-10-19T01:05:47Z",
+   "tests": null
+  },
   "yumi-rice": {
    "description": "Hyprland 0.56 (Lua) + HyDE rice for MacBook Pro M1 on Asahi Linux: pill Waybar, one rofi menu engine, swaync control center, wallpaper-synced colors",
    "topics": [
@@ -315,5 +333,5 @@ window.GH = {
   "repo": "yumi-rice",
   "at": "2026-10-14T20:17:59Z"
  },
- "synced": "2026-10-16T11:34:22Z"
+ "synced": "2026-10-19T04:51:19Z"
 };
