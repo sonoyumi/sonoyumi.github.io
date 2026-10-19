@@ -1,6 +1,20 @@
 // Сгенерировано tools/sync_github.py — не править руками
 window.GH = {
  "repos": {
+  "yumi-touchbar": {
+   "description": "Touch Bar on Asahi Linux: touchbard with swipe between layers, an ink-style theme and 15 plugins (MacBook Pro 13\" M1)",
+   "topics": [
+    "arch-linux-arm",
+    "asahi-linux",
+    "hyprland",
+    "macbook-pro",
+    "touchbar"
+   ],
+   "language": "Python",
+   "stars": 0,
+   "pushed": "2026-10-19T21:48:19Z",
+   "tests": null
+  },
   "yumi-touchid": {
    "description": "Touch ID on a stock linux-asahi kernel for MacBook Pro 13\" M1 (Arch Linux ARM) - built with Claude Code",
    "topics": [
@@ -333,5 +347,5 @@ window.GH = {
   "repo": "yumi-rice",
   "at": "2026-10-14T20:17:59Z"
  },
- "synced": "2026-10-19T13:33:06Z"
+ "synced": "2026-10-19T22:27:12Z"
 };
