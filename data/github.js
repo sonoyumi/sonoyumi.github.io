@@ -1,6 +1,25 @@
 // Сгенерировано tools/sync_github.py — не править руками
 window.GH = {
  "repos": {
+  "yumi-rice": {
+   "description": "Hyprland 0.56 (Lua) + HyDE rice for MacBook Pro M1 on Asahi Linux: pill Waybar, one rofi menu engine, swaync control center, wallpaper-synced colors",
+   "topics": [
+    "arm64",
+    "asahi-linux",
+    "dotfiles",
+    "hyde",
+    "hyprland",
+    "linux",
+    "rice",
+    "rofi",
+    "swaync",
+    "waybar"
+   ],
+   "language": "Python",
+   "stars": 3,
+   "pushed": "2026-11-11T19:30:34Z",
+   "tests": null
+  },
   "yumi-touchbar": {
    "description": "Touch Bar on Asahi Linux: touchbard with swipe between layers, an ink-style theme and 15 plugins (MacBook Pro 13\" M1)",
    "topics": [
@@ -31,25 +50,6 @@ window.GH = {
    "language": "Rust",
    "stars": 0,
    "pushed": "2026-10-19T12:17:39Z",
-   "tests": null
-  },
-  "yumi-rice": {
-   "description": "Hyprland 0.56 (Lua) + HyDE rice for MacBook Pro M1 on Asahi Linux: pill Waybar, one rofi menu engine, swaync control center, wallpaper-synced colors",
-   "topics": [
-    "arm64",
-    "asahi-linux",
-    "dotfiles",
-    "hyde",
-    "hyprland",
-    "linux",
-    "rice",
-    "rofi",
-    "swaync",
-    "waybar"
-   ],
-   "language": "Python",
-   "stars": 3,
-   "pushed": "2026-10-15T23:35:03Z",
    "tests": null
   },
   "post-planner": {
@@ -347,5 +347,5 @@ window.GH = {
   "repo": "yumi-touchbar",
   "at": "2026-10-19T21:48:20Z"
  },
- "synced": "2026-10-20T17:17:14Z"
+ "synced": "2026-11-11T19:41:53Z"
 };
