@@ -15,7 +15,7 @@ window.GH = {
     "swaync",
     "waybar"
    ],
-   "language": "Python",
+   "language": "QML",
    "stars": 3,
    "pushed": "2026-11-11T19:30:34Z",
    "tests": null
@@ -347,5 +347,5 @@ window.GH = {
   "repo": "yumi-touchbar",
   "at": "2026-10-19T21:48:20Z"
  },
- "synced": "2026-11-11T19:41:53Z"
+ "synced": "2026-11-12T07:22:07Z"
 };
